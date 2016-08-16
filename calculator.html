@@ -1,0 +1,32 @@
+<!Doctype html>
+<html>
+<head>
+<title>
+Online Calculator
+</title>
+<link rel="stylesheet" type="text/css" href="calci.css">
+</head>
+<body bgcolor="#E2C2F6">
+<form  name="myform" method="post">
+<div id="mainBody">
+
+<br>
+<br>
+<br>
+<h3 class="heading">Calculator...</h3>
+<table id="tabl">
+<tr>
+<td><input id="val1" type="text" name="num1" value="" required="true"/></td>
+<td><input id="val2" type="text" name="num2" value="" required="true"/></td>
+</tr>
+<tr>
+<td><output type="text"/></td>
+</tr>
+<tr>
+<td><input type="submit" value="Add" onclick="navigate(1)" formaction="http://localhost:4444/"></td> 
+<td><input type="submit" value="Reset" onclick="reset()"/></td> 
+</tr>
+</table>
+</div>
+</form>
+</body>
