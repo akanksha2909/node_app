@@ -12,7 +12,7 @@ console.log(data1);
 var num1 = parseInt(qs['num1']);
 var num2 = parseInt(qs['num2']);
 var options = {
-  host: '172.17.0.3',
+  host: '172.17.0.2',
   port: 9000,
   path: '/MyController/'+num1+'/'+num2
 };
