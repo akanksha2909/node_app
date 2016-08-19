@@ -8,12 +8,12 @@ Online Calculator
 <script>
 var num1 = document.getElementById("val1").value;
 var num2 = document.getElementById("val2").value;
+console.log("Numbers are: "+num1+" "+num2);
 function getResult(){
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("resp").innerHTML = xhttp.responseText;
-	  element.style.visibility='visible';
     }
   };
   xhttp.open("POST", "http://172.17.0.2:9000/MyController/"+num1+"/"+num2,true);
@@ -37,7 +37,7 @@ xhttp.onreadystatechange = function() {
 <td><output type="text"/></td>
 </tr>
 <tr>
-<td><input type="submit" value="Add" onclick="getResult()"></td> 
+<td><input type="button" value="Add" onclick="getResult()"></td> 
 <td><input type="submit" value="Reset" onclick="reset()"/></td> 
 </tr>
 </table>
