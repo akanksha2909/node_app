@@ -56,4 +56,4 @@ else{
 
 }
 server.listen(4444);
-console.log("server listening to 4444");
+console.log("server listening at 4444");
