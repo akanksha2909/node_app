@@ -17,6 +17,7 @@ xhttp.onreadystatechange = function() {
   };
 xhttp.open("GET","http://172.17.0.2:9000/MyController/"+num1+"/"+num2,true);
 xhttp.send();
+document.getElementById("resp").innerHTML = "result is 0";
 }
 </script>
 </head>
