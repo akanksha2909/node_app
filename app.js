@@ -2,8 +2,6 @@ var http = require('http');
 var url = require('url');
 var server = http.createServer(create);
 var querystring = require('querystring');
-var reqPlay = require('./requestPlay.js');
-var route = require('./router.js');
 var fs = require('fs');
 function create(request,response){
 var filePath = request.url;
