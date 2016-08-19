@@ -16,7 +16,7 @@ var xhttp = new XMLHttpRequest();
     }
   };**/
 xhttp.open("GET","http://172.17.0.2:9000/MyController/"+num1+"/"+num2,false);
-xhttp.setRequestHeader ("Accept", "text/xml");
+xhttp.setRequestHeader('Access-Control-Allow-Headers', '*');
 xhttp.send();
 //document.getElementById("resp").innerHTML = "result is 0";
 document.getElementById("resp").innerHTML = xhttp.responseText;
