@@ -5,30 +5,24 @@
 Online Calculator
 </title>
 <link rel="stylesheet" type="text/css" href="calci.css">
-<script>
+<script type="text/javascript">
+function myFunc(){
 var num1 = document.getElementById("val1").value.toString();
 var num2 = document.getElementById("val2").value.toString();
-url = "http://172.17.0.2:9000/MyController/"+num1+"/"+num2;
-console.log("Numbers are: "+num1+" "+num2);
-console.log(url);
-function getResult(){
-var xhttp;
-if (window.XMLHttpRequest) {
-    xhttp = new XMLHttpRequest();
-    } else {
-    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-}
-xhttp.open("GET",url,true);
-xhttp.send();
+url = "172.17.0.2:9000/MyController/"+num1+"/"+num2;
+var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("resp").innerHTML = xhttp.responseText;
     }
   };
+xhttp.open("GET",url,true);
+xhttp.send();
+}
 </script>
 </head>
 <body bgcolor="#E2C2F6">
-<form  name="myform" method="post">
+<form>
 <div id="mainBody">
 <br>
 <br>
@@ -43,7 +37,7 @@ xhttp.onreadystatechange = function() {
 <td><output type="text"/></td>
 </tr>
 <tr>
-<td><button type="button" value="Add" onclick="getResult()">Add</button></td> 
+<td><button type="button" onclick="myFunc()">Add</button></td> 
 <td><input type="submit" value="Reset" onclick="reset()"/></td> 
 </tr>
 </table>
