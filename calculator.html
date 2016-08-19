@@ -9,14 +9,13 @@ Online Calculator
 function myFunc(){
 var num1 = document.getElementById("val1").value.toString();
 var num2 = document.getElementById("val2").value.toString();
-url = "172.17.0.2:9000/MyController/"+num1+"/"+num2;
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("resp").innerHTML = xhttp.responseText;
     }
   };
-xhttp.open("GET",url,true);
+xhttp.open("GET","172.17.0.2:9000/MyController/"+num1+"/"+num2,true);
 xhttp.send();
 }
 </script>
