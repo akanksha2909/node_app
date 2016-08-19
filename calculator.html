@@ -12,7 +12,12 @@ url = "http://172.17.0.2:9000/MyController/"+num1+"/"+num2;
 console.log("Numbers are: "+num1+" "+num2);
 console.log(url);
 function getResult(){
-var xhttp = new XMLHttpRequest();
+var xhttp;
+if (window.XMLHttpRequest) {
+    xhttp = new XMLHttpRequest();
+    } else {
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
 xhttp.open("GET",url,true);
 xhttp.send();
 xhttp.onreadystatechange = function() {
