@@ -6,6 +6,8 @@ Online Calculator
 </title>
 <link rel="stylesheet" type="text/css" href="calci.css">
 <script type="text/javascript">
+num1 = "";
+num2 = "";
 function myFunc(){
 var xhttp = new XMLHttpRequest();
 num1 = document.getElementById("num1").value.toString();
@@ -18,7 +20,7 @@ xhttp.onreadystatechange = function() {
       document.getElementById("resp").style["visibility"] = "visible";
     }
   };
-xhttp.open("GET","http://172.17.0.3:4444/getValue?num1="+num1+"&num2="+num2,true);
+xhttp.open("GET","getValue?num1="+num1+"&num2="+num2,true);
 xhttp.send();
 }
 </script>
