@@ -7,6 +7,8 @@ Online Calculator
 <link rel="stylesheet" type="text/css" href="calci.css">
 <script type="text/javascript">
 function myFunc(){
+var val1= document.getElementById("val1").value.toString();
+var val2= document.getElementById("val2").value.toString();
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -15,7 +17,7 @@ xhttp.onreadystatechange = function() {
       document.getElementById("resp").style["visibility"] = "visible";
     }
   };
-xhttp.open("GET","getValue",true);
+xhttp.open("GET","getValue?num1="+val1+"&num2="+val2,true);
 xhttp.send();
 }
 </script>
