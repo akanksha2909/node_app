@@ -33,11 +33,9 @@ else if(filePath == "/calci.css"){
     });         
 }
 else if(filePath.substr(0,9) == "/getValue"){
-	console.log("in getValue");
 	var query = url.parse(filePath).query;
 	var num1 = parseInt(querystring.parse(query)["num1"]);
 	var num2 = parseInt(querystring.parse(query)["num2"]);
-	console.log(num1+num2);
 	var options = {
 	  host: '172.17.0.2',
 	  port: 9000,
