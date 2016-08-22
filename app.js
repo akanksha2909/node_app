@@ -33,6 +33,7 @@ else if(filePath == "/calci.css"){
     });         
 }
 else if(filePath == "/getValue"){
+	console.log("in getValue");
 	var query = url.parse(filePath).query;
 	var num1 = querystring.parse(query)["num1"];
 	var num2 = querystring.parse(query)["num2"];
