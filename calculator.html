@@ -7,20 +7,14 @@ Online Calculator
 <link rel="stylesheet" type="text/css" href="calci.css">
 <script type="text/javascript">
 function myFunc(){
-var num1 = document.getElementById("val1").value.toString();
-var num2 = document.getElementById("val2").value.toString();
 var xhttp = new XMLHttpRequest();
-data="";
-/**xhttp.onreadystatechange = function() {
+xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("resp").innerHTML = xhttp.responseText;
     }
-  };**/
-xhttp.open("GET","http://172.17.0.2:9000/MyController/"+num1+"/"+num2,false);
-xhttp.send(null);
-//document.getElementById("resp").innerHTML = "result is 0";
-data+=xhttp.responseText;
-document.getElementById("resp").innerHTML = data;
+  };
+xhttp.open("GET","getValue",true);
+xhttp.send();
 }
 </script>
 </head>
