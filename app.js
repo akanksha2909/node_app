@@ -32,18 +32,26 @@ else if(filePath == "/calci.css"){
             }
     });         
 }
-else if(filePath == "/script.js"){
-	fs.readFile("./script.js",'utf8', function (error,data) {
-            if (error) {
-                response.writeHead(404);
-                response.write("<html><head><title>Error</title></head><body bgcolor='#E2C2F6'><br><center><h3 style='color:red;'>The requested content is not available...</h3></center></body></html>");
-				response.end();	
-            } else {
-                response.writeHead(200,{"Content-Type": "text/javascript" });
-                response.write(data);
-				response.end();
-            }
-    });         
+else if(filePath == "/getValue"){
+	var query = url.parse(request.url).query;
+	var num1 = querystring.parse(query)["num1"];
+	var num2 = querystring.parse(query)["num2"];
+	var options = {
+	  host: '172.17.0.2',
+	  port: 9000,
+	  path: '/MyController/'+num1+'/'+num2
+	};
+	http.get(options, function(resp){
+	  resp.setEncoding('utf8');
+	  resp.on('data', function(chunk){
+	  response.writeHead(200,{"Content-Type":"text/html"});
+	  response.write("Addition of "+num1+" "+"&"+" "+num2+" " +"=" +" "+chunk); 
+	  response.end();
+	  });
+	}).on("error", function(e){
+	  console.log("Got error: " + e.message);
+	});
+           
 }
 
 else{
