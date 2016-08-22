@@ -11,6 +11,8 @@ var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("resp").innerHTML = xhttp.responseText;
+      document.getElementById("resp").style["display"] = "block";
+      document.getElementById("resp").style["visibility"] = "visible";
     }
   };
 xhttp.open("GET","getValue",true);
@@ -42,7 +44,7 @@ xhttp.send();
 <br>
 </div>
 <div id="result">
-<h3></h4><p id="resp"></p></h3>
+<h3><p id="resp" style="display:none;visibility:hidden;"></p></h3>
 </div>
 </form>
 </body>
