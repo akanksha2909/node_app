@@ -33,9 +33,10 @@ else if(filePath == "/calci.css"){
     });         
 }
 else if(filePath == "/getValue"){
-	var query = url.parse(request.url).query;
+	var query = url.parse(filePath).query;
 	var num1 = querystring.parse(query)["num1"];
 	var num2 = querystring.parse(query)["num2"];
+	console.log(num1+num2);
 	var options = {
 	  host: '172.17.0.2',
 	  port: 9000,
@@ -44,6 +45,7 @@ else if(filePath == "/getValue"){
 	http.get(options, function(resp){
 	  resp.setEncoding('utf8');
 	  resp.on('data', function(chunk){
+	  	console.log(chunk);
 	  response.writeHead(200,{"Content-Type":"text/html"});
 	  response.write("Addition of "+num1+" "+"&"+" "+num2+" " +"=" +" "+chunk); 
 	  response.end();
