@@ -10,6 +10,7 @@ function myFunc(){
 var xhttp = new XMLHttpRequest();
 num1 = document.getElementById("num1").value.toString();
 num2 = document.getElementById("num2").value.toString();
+url = "getValue?num1="+num1+"&num2="+num2;
 xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
       document.getElementById("resp").innerHTML = xhttp.responseText;
@@ -17,7 +18,7 @@ xhttp.onreadystatechange = function() {
       document.getElementById("resp").style["visibility"] = "visible";
     }
   };
-xhttp.open("GET","getValue?"+"num1="+num1+"&num2="+num2,true);
+xhttp.open("GET",url,true);
 xhttp.send();
 }
 </script>
